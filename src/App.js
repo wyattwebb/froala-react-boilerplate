@@ -19,14 +19,19 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    this.setState({content: 'SOMETHING ELSE LOADED AFTER'});
+  }
+
   render() {
     return (
       <div className="App">
+        The editor should say "SOMETHING ELSE LOADED AFTER"
         <FroalaEditor
-          /* As of v3.0.4 this results in nothing being displayed in the editor
-          tag="textarea" */
           model={this.state.content}
         />
+        <br/>
+        State: Content: {this.state.content}
       </div>
     );
   }
